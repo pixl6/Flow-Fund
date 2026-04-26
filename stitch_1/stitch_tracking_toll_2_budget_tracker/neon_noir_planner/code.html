@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed": "#1b1b24",
+            "primary-container": "#d4ef60",
+            "error-container": "#93000a",
+            "on-secondary-fixed": "#1e0e4e",
+            "border-subtle": "rgba(255, 255, 255, 0.1)",
+            "surface": "#13140b",
+            "on-primary": "#2b3400",
+            "background-surface": "#242424",
+            "data-lavender": "#C4B5FD",
+            "on-surface-variant": "#c6c8b1",
+            "surface-container-low": "#1b1c13",
+            "background": "#13140b",
+            "on-secondary-fixed-variant": "#4a3d7c",
+            "secondary-fixed": "#e7deff",
+            "tertiary-container": "#e3e1ee",
+            "surface-bright": "#393a2f",
+            "inverse-primary": "#556500",
+            "on-primary-container": "#5b6b00",
+            "inverse-surface": "#e4e3d4",
+            "error": "#ffb4ab",
+            "text-primary": "#FFFFFF",
+            "secondary-fixed-dim": "#ccbeff",
+            "action-neon": "#E4FF6E",
+            "on-primary-fixed": "#181e00",
+            "on-secondary-container": "#baabf3",
+            "primary-fixed": "#d4ef60",
+            "surface-container": "#1f2017",
+            "on-tertiary-fixed-variant": "#464651",
+            "surface-container-lowest": "#0d0f07",
+            "on-secondary": "#332664",
+            "surface-container-highest": "#34362b",
+            "inverse-on-surface": "#303127",
+            "on-tertiary-container": "#64636f",
+            "primary-fixed-dim": "#b8d246",
+            "tertiary-fixed-dim": "#c7c5d2",
+            "surface-variant": "#34362b",
+            "on-background": "#e4e3d4",
+            "primary": "#ffffff",
+            "on-tertiary": "#302f3a",
+            "on-surface": "#e4e3d4",
+            "tertiary-fixed": "#e3e1ee",
+            "on-primary-fixed-variant": "#404c00",
+            "surface-dim": "#13140b",
+            "surface-tint": "#b8d246",
+            "outline-variant": "#464837",
+            "secondary": "#ccbeff",
+            "background-base": "#121212",
+            "tertiary": "#ffffff",
+            "on-error": "#690005",
+            "surface-container-high": "#292b21",
+            "secondary-container": "#4a3d7c",
+            "outline": "#90927d",
+            "text-muted": "#888888"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "label": ["Inter"],
+            "body": ["Inter"],
+            "microcopy": ["Inter"],
+            "h1": ["Inter"],
+            "widget-title": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .neon-glow-primary {
+      box-shadow: 0 0 15px rgba(228, 255, 110, 0.3);
+    }
+    .glass-card {
+      background: rgba(36, 36, 36, 0.4);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .circular-gauge {
+      background: conic-gradient(from 180deg, #E4FF6E 0%, #C4B5FD 72%, transparent 72%);
+    }
+    .gauge-mask {
+      background: #121212;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body class="bg-background-base font-body text-on-background antialiased overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="flex flex-col fixed left-0 top-0 h-full w-64 z-40 px-4 py-8 bg-[#121212]/90 backdrop-blur-xl border-r border-white/10 shadow-[inset_-1px_0_0_0_rgba(255,255,255,0.05)]">
+<div class="mb-12 px-4">
+<div class="text-xl font-black text-[#E4FF6E] tracking-tighter uppercase font-h1">NEON NOIR</div>
+<div class="text-microcopy text-neutral-500 uppercase tracking-[0.2em] font-microcopy mt-1">Financial Intel</div>
+</div>
+<nav class="flex-1 space-y-2">
+<div class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors rounded-full font-label text-label cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+        Dashboard
+      </div>
+<div class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors rounded-full font-label text-label cursor-pointer">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+        Expenses
+      </div>
+<div class="bg-[#E4FF6E] text-black rounded-full font-bold shadow-[0_0_15px_rgba(228,255,110,0.3)] transition-transform scale-105 flex items-center gap-3 px-4 py-3 font-label text-label cursor-pointer">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+        Budgets
+      </div>
+<div class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors rounded-full font-label text-label cursor-pointer">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+        Analytics
+      </div>
+<div class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors rounded-full font-label text-label cursor-pointer">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+        Team
+      </div>
+<div class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors rounded-full font-label text-label cursor-pointer">
+<span class="material-symbols-outlined" data-icon="timeline">timeline</span>
+        Timeline
+      </div>
+</nav>
+<div class="mt-auto px-2">
+<button class="w-full bg-[#E4FF6E] text-black rounded-full font-bold py-3 text-label font-label flex items-center justify-center gap-2 neon-glow-primary active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+        New Report
+      </button>
+<div class="mt-8 flex items-center gap-3 px-2">
+<img alt="User profile" class="w-10 h-10 rounded-full border border-white/20" data-alt="Close up professional portrait of a tech executive in dark studio lighting with subtle blue and yellow highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGO2aLEuX_RnGfFBRIXrkaxxIqsjvdU4FWOuXKXk2zi_bjzv7PgVYUDpcKxGvGh3we4Nr8JNdzJEDzMBIFXeq4pmP0MnDWQIN9k-2M8nhvXQOFcnfSVRIVuEYH_J2WrVilPw_dbXD60JVdcckYcWpEjGVLMcgR6aEmd3zXSvf2tzl9ouPQUi_CKS1NCUH5ccij6yLnNILbQ9IRdIopClAhsSEuLC_dnC69mPgzvMTMwFJFL_W5C2muWkd0BCpvASctHXE2Ig3U-QeG"/>
+<div>
+<div class="text-body font-bold text-white font-body">Alex Chen</div>
+<div class="text-microcopy text-neutral-500 font-microcopy">Pro Analyst</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="flex justify-between items-center h-16 ml-64 px-8 sticky top-0 z-30 bg-[#121212]/80 backdrop-blur-md border-b border-white/5 shadow-[inset_0_-1px_0_0_rgba(255,255,255,0.05)]">
+<div class="flex items-center gap-8">
+<span class="text-lg font-extrabold text-white tracking-tight font-h1">QUANTUM DASH</span>
+<div class="relative flex items-center group">
+<span class="material-symbols-outlined absolute left-3 text-neutral-500" data-icon="search">search</span>
+<input class="bg-[#242424] border-none rounded-full pl-10 pr-4 py-1.5 text-sm font-label focus:ring-1 focus:ring-[#E4FF6E]/50 w-64 transition-all outline-none" placeholder="Search parameters..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-neutral-400">
+<span class="material-symbols-outlined cursor-pointer hover:text-white transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-white transition-colors" data-icon="history">history</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-white transition-colors" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 p-8 min-h-screen">
+<!-- Hero Dashboard Header -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h1 class="font-h1 text-h1 text-white">Monthly Capital Flow</h1>
+<p class="text-body text-neutral-400 mt-1 font-body">Financial cycle ends in 08 days 14 hours</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-[#242424] text-white px-4 py-2 rounded-full font-label text-label flex items-center gap-2 border border-white/10 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_today">calendar_today</span>
+          July 2024
+        </button>
+<button class="bg-[#242424] text-white px-4 py-2 rounded-full font-label text-label flex items-center gap-2 border border-white/10 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+          Filter
+        </button>
+</div>
+</div>
+<!-- Top Bento Grid Layer -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Large Circular Gauge Card -->
+<div class="col-span-12 lg:col-span-5 glass-card rounded-lg p-8 relative overflow-hidden flex flex-col items-center justify-center min-h-[400px]">
+<div class="absolute top-6 left-8 flex items-center gap-2">
+<div class="w-2 h-2 bg-[#E4FF6E] rounded-full animate-pulse"></div>
+<span class="font-widget-title text-widget-title text-neutral-400 uppercase">Real-time Utilization</span>
+</div>
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- Circular Gauge Background Path -->
+<div class="absolute inset-0 rounded-full border-[16px] border-white/5"></div>
+<!-- Colored Gauge -->
+<div class="absolute inset-0 circular-gauge rounded-full"></div>
+<!-- Mask -->
+<div class="absolute inset-4 gauge-mask flex flex-col items-center justify-center border border-white/5 shadow-2xl">
+<span class="text-5xl font-black text-white tracking-tighter">72%</span>
+<span class="text-microcopy text-neutral-500 uppercase mt-1 tracking-widest">Spent</span>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-2 gap-12 w-full">
+<div class="text-center">
+<div class="text-microcopy text-neutral-500 uppercase font-microcopy mb-1">Total Allocated</div>
+<div class="text-xl font-bold text-white">$45,000.00</div>
+</div>
+<div class="text-center">
+<div class="text-microcopy text-neutral-500 uppercase font-microcopy mb-1">Remaining</div>
+<div class="text-xl font-bold text-action-neon">$12,600.00</div>
+</div>
+</div>
+</div>
+<!-- Comparative Expenditure Bars -->
+<div class="col-span-12 lg:col-span-7 glass-card rounded-lg p-8">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-widget-title text-widget-title text-white uppercase tracking-wider">Allocation vs Expenditure</h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-1.5 rounded-full bg-white/20"></div>
+<span class="text-microcopy text-neutral-500">Allocation</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-1.5 rounded-full bg-action-neon"></div>
+<span class="text-microcopy text-neutral-500">Expenditure</span>
+</div>
+</div>
+</div>
+<div class="space-y-8">
+<!-- Bar Group 1 -->
+<div class="space-y-2">
+<div class="flex justify-between text-label font-label text-neutral-400">
+<span>Operational Ops</span>
+<span class="text-white">$12,400 / <span class="text-neutral-600">$15,000</span></span>
+</div>
+<div class="relative h-4 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-white/10 rounded-full" style="width: 100%"></div>
+<div class="absolute inset-y-0 left-0 bg-action-neon rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<!-- Bar Group 2 -->
+<div class="space-y-2">
+<div class="flex justify-between text-label font-label text-neutral-400">
+<span>R&amp;D Capital</span>
+<span class="text-white">$8,200 / <span class="text-neutral-600">$10,000</span></span>
+</div>
+<div class="relative h-4 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-white/10 rounded-full" style="width: 100%"></div>
+<div class="absolute inset-y-0 left-0 bg-data-lavender rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<!-- Bar Group 3 -->
+<div class="space-y-2">
+<div class="flex justify-between text-label font-label text-neutral-400">
+<span>Marketing Pulse</span>
+<span class="text-white">$14,100 / <span class="text-neutral-600">$14,000</span></span>
+</div>
+<div class="relative h-4 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-white/10 rounded-full" style="width: 100%"></div>
+<div class="absolute inset-y-0 left-0 bg-error rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Bar Group 4 -->
+<div class="space-y-2">
+<div class="flex justify-between text-label font-label text-neutral-400">
+<span>Infrastructure</span>
+<span class="text-white">$3,200 / <span class="text-neutral-600">$6,000</span></span>
+</div>
+<div class="relative h-4 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-white/10 rounded-full" style="width: 100%"></div>
+<div class="absolute inset-y-0 left-0 bg-primary-fixed-dim rounded-full" style="width: 53%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Categories Section -->
+<div class="mt-gutter">
+<div class="glass-card rounded-lg overflow-hidden border border-white/5">
+<div class="p-6 border-b border-white/5 flex justify-between items-center">
+<h3 class="font-widget-title text-widget-title text-white uppercase tracking-wider">Detailed Categories Breakdown</h3>
+<button class="text-[#E4FF6E] text-label font-label hover:underline">Download CSV</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-white/2 text-microcopy uppercase tracking-widest text-neutral-500 font-microcopy">
+<th class="px-6 py-4 font-normal">Category Name</th>
+<th class="px-6 py-4 font-normal">Health Status</th>
+<th class="px-6 py-4 font-normal">Utilization</th>
+<th class="px-6 py-4 font-normal text-right">Remaining Balance</th>
+<th class="px-6 py-4 font-normal text-right">Trend</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<!-- Item 1 -->
+<tr class="hover:bg-white/2 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#242424] flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-[#E4FF6E]" data-icon="cloud_queue">cloud_queue</span>
+</div>
+<div>
+<div class="text-body font-bold text-white">AWS Infrastructure</div>
+<div class="text-microcopy text-neutral-500">Server-side resources</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-[#E4FF6E]/10 text-[#E4FF6E] text-microcopy font-bold border border-[#E4FF6E]/20 uppercase">Optimal</span>
+</td>
+<td class="px-6 py-5">
+<div class="w-48">
+<div class="flex justify-between text-[11px] mb-1.5 text-neutral-500 font-microcopy">
+<span>42.5%</span>
+</div>
+<div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-action-neon" style="width: 42.5%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-label text-white">
+                  $4,520.12
+                </td>
+<td class="px-6 py-5 text-right">
+<span class="material-symbols-outlined text-action-neon" data-icon="trending_down">trending_down</span>
+</td>
+</tr>
+<!-- Item 2 -->
+<tr class="hover:bg-white/2 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#242424] flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-data-lavender" data-icon="brush">brush</span>
+</div>
+<div>
+<div class="text-body font-bold text-white">Creative Assets</div>
+<div class="text-microcopy text-neutral-500">Design &amp; Media licenses</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-data-lavender/10 text-data-lavender text-microcopy font-bold border border-data-lavender/20 uppercase">Stable</span>
+</td>
+<td class="px-6 py-5">
+<div class="w-48">
+<div class="flex justify-between text-[11px] mb-1.5 text-neutral-500 font-microcopy">
+<span>78.9%</span>
+</div>
+<div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-data-lavender" style="width: 78.9%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-label text-white">
+                  $1,205.40
+                </td>
+<td class="px-6 py-5 text-right">
+<span class="material-symbols-outlined text-neutral-500" data-icon="trending_flat">trending_flat</span>
+</td>
+</tr>
+<!-- Item 3 -->
+<tr class="hover:bg-white/2 transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#242424] flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-error" data-icon="campaign">campaign</span>
+</div>
+<div>
+<div class="text-body font-bold text-white">Ad Campaigns</div>
+<div class="text-microcopy text-neutral-500">Q3 Search Engine Growth</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 rounded-full bg-error/10 text-error text-microcopy font-bold border border-error/20 uppercase">At Risk</span>
+</td>
+<td class="px-6 py-5">
+<div class="w-48">
+<div class="flex justify-between text-[11px] mb-1.5 text-neutral-500 font-microcopy">
+<span>98.2%</span>
+</div>
+<div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 98.2%"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-label text-white">
+                  $42.00
+                </td>
+<td class="px-6 py-5 text-right">
+<span class="material-symbols-outlined text-error" data-icon="trending_up">trending_up</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- Overlay Decoration elements -->
+<div class="fixed top-1/4 -right-20 w-96 h-96 bg-action-neon/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-1/4 -left-20 w-96 h-96 bg-data-lavender/5 rounded-full blur-[120px] pointer-events-none"></div>
+</body></html>

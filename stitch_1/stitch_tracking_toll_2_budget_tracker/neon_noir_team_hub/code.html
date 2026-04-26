@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-error-container": "#ffdad6",
+                  "on-tertiary-fixed": "#1b1b24",
+                  "primary-container": "#d4ef60",
+                  "error-container": "#93000a",
+                  "on-secondary-fixed": "#1e0e4e",
+                  "border-subtle": "rgba(255, 255, 255, 0.1)",
+                  "surface": "#13140b",
+                  "on-primary": "#2b3400",
+                  "background-surface": "#242424",
+                  "data-lavender": "#C4B5FD",
+                  "on-surface-variant": "#c6c8b1",
+                  "surface-container-low": "#1b1c13",
+                  "background": "#13140b",
+                  "on-secondary-fixed-variant": "#4a3d7c",
+                  "secondary-fixed": "#e7deff",
+                  "tertiary-container": "#e3e1ee",
+                  "surface-bright": "#393a2f",
+                  "inverse-primary": "#556500",
+                  "on-primary-container": "#5b6b00",
+                  "inverse-surface": "#e4e3d4",
+                  "error": "#ffb4ab",
+                  "text-primary": "#FFFFFF",
+                  "secondary-fixed-dim": "#ccbeff",
+                  "action-neon": "#E4FF6E",
+                  "on-primary-fixed": "#181e00",
+                  "on-secondary-container": "#baabf3",
+                  "primary-fixed": "#d4ef60",
+                  "surface-container": "#1f2017",
+                  "on-tertiary-fixed-variant": "#464651",
+                  "surface-container-lowest": "#0d0f07",
+                  "on-secondary": "#332664",
+                  "surface-container-highest": "#34362b",
+                  "inverse-on-surface": "#303127",
+                  "on-tertiary-container": "#64636f",
+                  "primary-fixed-dim": "#b8d246",
+                  "tertiary-fixed-dim": "#c7c5d2",
+                  "surface-variant": "#34362b",
+                  "on-background": "#e4e3d4",
+                  "primary": "#ffffff",
+                  "on-tertiary": "#302f3a",
+                  "on-surface": "#e4e3d4",
+                  "tertiary-fixed": "#e3e1ee",
+                  "on-primary-fixed-variant": "#404c00",
+                  "surface-dim": "#13140b",
+                  "surface-tint": "#b8d246",
+                  "outline-variant": "#464837",
+                  "secondary": "#ccbeff",
+                  "background-base": "#121212",
+                  "tertiary": "#ffffff",
+                  "on-error": "#690005",
+                  "surface-container-high": "#292b21",
+                  "secondary-container": "#4a3d7c",
+                  "outline": "#90927d",
+                  "text-muted": "#888888"
+          },
+          "borderRadius": {
+                  "DEFAULT": "1rem",
+                  "lg": "2rem",
+                  "xl": "3rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "widget-gap": "1rem",
+                  "container-padding": "2rem",
+                  "sidebar-width": "80px",
+                  "gutter": "1.5rem"
+          },
+          "fontFamily": {
+                  "label": ["Inter"],
+                  "body": ["Inter"],
+                  "microcopy": ["Inter"],
+                  "h1": ["Inter"],
+                  "widget-title": ["Inter"]
+          },
+          "fontSize": {
+                  "label": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                  "body": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                  "microcopy": ["11px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                  "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "widget-title": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .neon-glow {
+      box-shadow: 0 0 15px rgba(228, 255, 110, 0.3);
+    }
+    .glass-card {
+      background: rgba(36, 36, 36, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .asymmetric-shape {
+      clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+    }
+  </style>
+</head>
+<body class="bg-background-base text-on-background font-body selection:bg-action-neon selection:text-black">
+<!-- Side Navigation Shell -->
+<aside class="flex flex-col fixed left-0 top-0 h-full w-64 z-40 px-4 py-8 bg-[#121212]/90 backdrop-blur-xl border-r border-white/10 shadow-[inset_-1px_0_0_0_rgba(255,255,255,0.05)] font-inter tracking-tight antialiased">
+<div class="mb-10 px-4">
+<h1 class="text-xl font-black text-[#E4FF6E] tracking-tighter uppercase">NEON NOIR</h1>
+<p class="text-[10px] text-neutral-500 tracking-[0.2em] uppercase mt-1">Financial Intel</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="bg-[#E4FF6E] text-black rounded-full font-bold shadow-[0_0_15px_rgba(228,255,110,0.3)] transition-transform scale-105 flex items-center gap-3 px-4 py-3" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label text-label">Expenses</span>
+</a>
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label text-label">Budgets</span>
+</a>
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-label text-label">Analytics</span>
+</a>
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label text-label">Team</span>
+</a>
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="timeline">timeline</span>
+<span class="font-label text-label">Timeline</span>
+</a>
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<button class="w-full py-3 rounded-xl bg-neutral-800 text-white font-bold hover:bg-neutral-700 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+        New Report
+      </button>
+</div>
+</aside>
+<!-- Top App Bar Shell -->
+<header class="flex justify-between items-center h-16 ml-64 px-8 sticky top-0 z-30 bg-[#121212]/80 backdrop-blur-md border-b border-white/5 shadow-[inset_0_-1px_0_0_rgba(255,255,255,0.05)]">
+<div class="flex items-center gap-8">
+<span class="text-lg font-extrabold text-white">QUANTUM DASH</span>
+<div class="relative flex items-center group">
+<span class="material-symbols-outlined absolute left-3 text-neutral-500" data-icon="search">search</span>
+<input class="bg-neutral-900/50 border-none rounded-full pl-10 pr-4 py-1.5 text-sm focus:ring-1 focus:ring-[#E4FF6E]/50 w-64 transition-all outline-none" placeholder="Search approvals..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-neutral-400 hover:text-white transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-[#E4FF6E] rounded-full"></span>
+</button>
+<button class="text-neutral-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="flex items-center gap-3 ml-2 border-l border-white/10 pl-6">
+<div class="text-right">
+<p class="text-xs font-bold text-white leading-none">Admin Node</p>
+<p class="text-[10px] text-neutral-500 mt-1 uppercase">Level 4 Clearance</p>
+</div>
+<img class="w-8 h-8 rounded-full border border-[#E4FF6E]/30 object-cover" data-alt="professional portrait of a high-tech financial analyst with dark mood lighting and cybernetic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUzI7ctPQawT6Ca2u_EfHxKcYdG4BvChTNhQVX-tfuBykEam2olm-FxyQoW91fUi8hu7KtKmNLBqCmtbXrxiH-vEpXJZ_qyekgCEPWNDXmSXPKoWxBXjHRF5kGJvJqhJpJpEG52dtXKTK3twEN-0NR230HSfCuIybQKdG46UaqPb5Jl6w3bKrJDzJfwVqadcMy3z6hbZsLPKtzuKjxJBtBzRRW-0q1DWIz1xDIgDR2zFEdwgJgjY2Jvk1NwGIeK_YeytKMpvm3DORt"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-8 min-h-screen">
+<!-- Hero Header -->
+<section class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="font-h1 text-h1 text-white tracking-tighter">Team Approvals Hub</h2>
+<p class="text-neutral-400 mt-2 max-w-md">Real-time verification node for high-latency financial transactions and team expenditure protocols.</p>
+</div>
+<div class="flex gap-4">
+<div class="glass-card px-4 py-2 rounded-lg flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+<span class="text-xs font-bold text-white">System: Optimized</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Dashboard -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Intelligence Forecast (Area Chart) -->
+<div class="col-span-12 lg:col-span-8 glass-card p-6 rounded-lg relative overflow-hidden group">
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div>
+<h3 class="font-widget-title text-widget-title text-neutral-400 uppercase tracking-widest">Intelligence Forecast</h3>
+<p class="text-2xl font-black text-white mt-1">Saving Trends <span class="text-[#E4FF6E]">+12.4%</span></p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-[10px] rounded bg-[#E4FF6E] text-black font-bold uppercase tracking-tighter">Live</button>
+<button class="px-3 py-1 text-[10px] rounded border border-white/10 text-white font-bold uppercase tracking-tighter">7D</button>
+</div>
+</div>
+<!-- Mock Area Chart -->
+<div class="h-48 w-full flex items-end gap-1 relative">
+<div class="absolute inset-0 bg-gradient-to-t from-[#E4FF6E]/10 to-transparent pointer-events-none"></div>
+<svg class="absolute bottom-0 left-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#E4FF6E" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#E4FF6E" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,180 Q100,140 200,160 T400,100 T600,120 T800,40 T1000,60 L1000,200 L0,200 Z" fill="url(#areaGradient)"></path>
+<path d="M0,180 Q100,140 200,160 T400,100 T600,120 T800,40 T1000,60" fill="none" stroke="#E4FF6E" stroke-width="3"></path>
+</svg>
+<div class="absolute left-1/2 bottom-1/2 -translate-x-1/2 group-hover:block hidden px-3 py-1 bg-white text-black text-[10px] font-bold rounded-full shadow-lg">
+                Peak Velocity: $42,900
+            </div>
+</div>
+<div class="mt-6 flex justify-between border-t border-white/5 pt-4">
+<div class="flex gap-6">
+<div>
+<p class="text-[10px] text-neutral-500 uppercase">Avg Expenditure</p>
+<p class="text-sm font-bold text-white">$12,450.00</p>
+</div>
+<div>
+<p class="text-[10px] text-neutral-500 uppercase">Burn Rate</p>
+<p class="text-sm font-bold text-white">2.4% / day</p>
+</div>
+</div>
+<button class="flex items-center gap-2 text-[#E4FF6E] text-xs font-bold">
+                VIEW FULL REPORT <span class="material-symbols-outlined text-sm" data-icon="north_east">north_east</span>
+</button>
+</div>
+</div>
+<!-- Quick Metrics -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-high p-6 rounded-lg border border-white/5 flex items-center justify-between">
+<div>
+<p class="text-[10px] text-neutral-400 uppercase tracking-widest mb-1">Queue Depth</p>
+<p class="text-3xl font-black text-white">08</p>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-dashed border-[#E4FF6E]/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#E4FF6E]" data-icon="pending_actions">pending_actions</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-lg border border-white/5 flex items-center justify-between">
+<div>
+<p class="text-[10px] text-neutral-400 uppercase tracking-widest mb-1">Audit Score</p>
+<p class="text-3xl font-black text-white">99.8</p>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-dashed border-[#E4FF6E]/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#E4FF6E]" data-icon="verified_user">verified_user</span>
+</div>
+</div>
+</div>
+<!-- Approvals Section Header -->
+<div class="col-span-12 mt-4">
+<div class="flex items-center gap-4">
+<h3 class="font-widget-title text-widget-title text-white uppercase tracking-widest">Active Verification Nodes</h3>
+<div class="flex-1 h-px bg-white/5"></div>
+</div>
+</div>
+<!-- Team Status Cards -->
+<!-- Card 1: Nandini -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 glass-card p-6 rounded-lg hover:scale-[1.02] transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-full border-2 border-[#E4FF6E] object-cover" data-alt="portrait of a confident female financial team member with professional lighting and minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCopaeW6fszetYlKesGRzzNseXVvpBo-Xl3mzAg0usAPtfHMVPOq8DjWEkWp6LZOPIfb1bD58xRMR4rBtTfalA5_KvjgWLiJbYVoJWtxsOY5grkEBUTDmgs3lA_lciNi-QpPndUwP-JDpi7ODYNsjttOHAiHTB0j7wUsr0KKsCQ90AVUjbU884FfO401QVVd_s52c1EB_dUfyWB_C_lhAH51yEQoaNFEeEFOr_z5bYtdefnLJiENYNoyfvI77TLhVSsYcYSJHJv_UTs"/>
+<div class="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-1 border-2 border-background shadow-lg">
+<span class="material-symbols-outlined text-[10px] text-white" data-icon="check" data-weight="fill">check</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Nandini Sharma</p>
+<p class="text-[10px] text-neutral-500 uppercase">Product Operations</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-neutral-600 group-hover:text-[#E4FF6E]" data-icon="more_vert">more_vert</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-white/5 pb-4">
+<div>
+<p class="text-[10px] text-neutral-500 uppercase mb-1">Proposed Transaction</p>
+<p class="text-2xl font-black text-white">$14,200.00</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-[#E4FF6E] font-bold bg-[#E4FF6E]/10 px-2 py-0.5 rounded">PRIORITY HIGH</p>
+</div>
+</div>
+<div class="py-2">
+<p class="text-[10px] text-neutral-500 uppercase mb-2">Digital Signature Hash</p>
+<div class="bg-black/40 p-3 rounded-lg border border-white/5 font-mono text-[10px] text-neutral-400 break-all">
+                    0x71C24D...88F1
+                </div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 py-2.5 rounded-lg bg-[#E4FF6E] text-black font-bold text-xs uppercase tracking-tighter neon-glow">Verify</button>
+<button class="px-3 py-2.5 rounded-lg border border-white/10 text-white font-bold text-xs uppercase tracking-tighter hover:bg-white/5">Decline</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Nitanshi -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 glass-card p-6 rounded-lg hover:scale-[1.02] transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-full border-2 border-neutral-700 object-cover" data-alt="portrait of a focused female analytics lead with modern eyewear and cinematic cool-toned lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxYGVjnrJfEWaRr4qlvJniIfAnnMuAcXzd2NssEIhb9na8ZWCxYcrpRh_cBHU5z22Mp353bVb01AOSJMsWvf1m4gGLcsugV44o-Okts7SSf93V2CDSvbce1a6-NpbfveD1ZqsXo4Vb-MclKchYzjoooccVoUdLi4cOI7tf3hpbOb6oSa9vufk-_SNeFN1jZS_TDnWUYJaDtSoew8ez26eKhqJ_8Mb3cglbbhye53-gROcmaklUyeV1QdnDTYG7Z5KLYpLMo8tslDVq"/>
+<div class="absolute -bottom-1 -right-1 bg-neutral-600 rounded-full p-1 border-2 border-background shadow-lg">
+<span class="material-symbols-outlined text-[10px] text-white" data-icon="lock">lock</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Nitanshi Verma</p>
+<p class="text-[10px] text-neutral-500 uppercase">Data Intel Lead</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-neutral-600 group-hover:text-[#E4FF6E]" data-icon="more_vert">more_vert</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-white/5 pb-4">
+<div>
+<p class="text-[10px] text-neutral-500 uppercase mb-1">Proposed Transaction</p>
+<p class="text-2xl font-black text-white">$8,540.50</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-white font-bold bg-white/10 px-2 py-0.5 rounded">STANDARD</p>
+</div>
+</div>
+<div class="py-2">
+<p class="text-[10px] text-neutral-500 uppercase mb-2">Digital Signature Hash</p>
+<div class="bg-black/40 p-3 rounded-lg border border-white/5 font-mono text-[10px] text-neutral-400 break-all">
+                    0x94B18E...22A7
+                </div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 py-2.5 rounded-lg bg-[#E4FF6E] text-black font-bold text-xs uppercase tracking-tighter neon-glow">Verify</button>
+<button class="px-3 py-2.5 rounded-lg border border-white/10 text-white font-bold text-xs uppercase tracking-tighter hover:bg-white/5">Decline</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Prabhat -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 glass-card p-6 rounded-lg hover:scale-[1.02] transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-14 h-14 rounded-full border-2 border-neutral-700 object-cover" data-alt="close-up portrait of a male tech executive with thoughtful expression and sharp studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMKzQ3zCK2hHdyoBDkVuoNu8r0yBJVquYxMIXkKjKQjJJwW7XEtoG8vjLMnfXubqSnsDgG9YuE4GcjIKjkPYN4CIaMQWFT6aMZXHFz89KdD2BBU9xw9Rd2C0o-NgTQ8ncXUVBmcLETjhhctidQIN1cS2HRyvMggkoC4aP-XX54bbBnwN_4oB6LCjXNFJ0p1VQAyQ72Zbx3XPErCkw-GyWDIYYxsJpM_gBZ97xO0Y9KnMRuREdJVzZJjVt6ISibo4McAcK5qiifEtEv"/>
+<div class="absolute -bottom-1 -right-1 bg-yellow-500 rounded-full p-1 border-2 border-background shadow-lg">
+<span class="material-symbols-outlined text-[10px] text-white" data-icon="history">history</span>
+</div>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Prabhat Singh</p>
+<p class="text-[10px] text-neutral-500 uppercase">Infrastructure VP</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-neutral-600 group-hover:text-[#E4FF6E]" data-icon="more_vert">more_vert</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-white/5 pb-4">
+<div>
+<p class="text-[10px] text-neutral-500 uppercase mb-1">Proposed Transaction</p>
+<p class="text-2xl font-black text-white">$27,000.00</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-red-400 font-bold bg-red-400/10 px-2 py-0.5 rounded">CRITICAL</p>
+</div>
+</div>
+<div class="py-2">
+<p class="text-[10px] text-neutral-500 uppercase mb-2">Digital Signature Hash</p>
+<div class="bg-black/40 p-3 rounded-lg border border-white/5 font-mono text-[10px] text-neutral-400 break-all">
+                    0xA2C39F...91D4
+                </div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 py-2.5 rounded-lg bg-[#E4FF6E] text-black font-bold text-xs uppercase tracking-tighter neon-glow">Verify</button>
+<button class="px-3 py-2.5 rounded-lg border border-white/10 text-white font-bold text-xs uppercase tracking-tighter hover:bg-white/5">Decline</button>
+</div>
+</div>
+</div>
+<!-- Verification Audit Trail (Bottom List) -->
+<div class="col-span-12 glass-card rounded-lg overflow-hidden border border-white/5">
+<div class="p-6 border-b border-white/5 flex justify-between items-center">
+<h3 class="font-widget-title text-widget-title text-white uppercase tracking-widest">Global Verification Stream</h3>
+<button class="text-xs font-bold text-neutral-500 hover:text-[#E4FF6E] flex items-center gap-2">
+                EXPORT ARCHIVE <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+<table class="w-full text-left">
+<thead class="bg-white/5 text-[10px] text-neutral-500 uppercase tracking-widest">
+<tr>
+<th class="px-6 py-4">Transaction ID</th>
+<th class="px-6 py-4">Origin Node</th>
+<th class="px-6 py-4">Verification Level</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Timestamp</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-b border-white/5 hover:bg-white/5 transition-colors group">
+<td class="px-6 py-4 font-mono text-neutral-400">TX-9021-X9</td>
+<td class="px-6 py-4 text-white font-bold">Amit Raj</td>
+<td class="px-6 py-4">
+<div class="flex gap-1">
+<div class="w-1 h-3 bg-[#E4FF6E] rounded-full"></div>
+<div class="w-1 h-3 bg-[#E4FF6E] rounded-full"></div>
+<div class="w-1 h-3 bg-neutral-700 rounded-full"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-2 text-green-400 text-xs">
+<span class="w-1.5 h-1.5 bg-green-400 rounded-full"></span> COMPLETE
+                        </span>
+</td>
+<td class="px-6 py-4 text-right text-neutral-500 font-mono">12:04:22 GMT</td>
+</tr>
+<tr class="border-b border-white/5 hover:bg-white/5 transition-colors group">
+<td class="px-6 py-4 font-mono text-neutral-400">TX-8821-V4</td>
+<td class="px-6 py-4 text-white font-bold">Riya Mehra</td>
+<td class="px-6 py-4">
+<div class="flex gap-1">
+<div class="w-1 h-3 bg-[#E4FF6E] rounded-full"></div>
+<div class="w-1 h-3 bg-neutral-700 rounded-full"></div>
+<div class="w-1 h-3 bg-neutral-700 rounded-full"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-2 text-yellow-400 text-xs">
+<span class="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> PROCESSING
+                        </span>
+</td>
+<td class="px-6 py-4 text-right text-neutral-500 font-mono">11:58:04 GMT</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors group">
+<td class="px-6 py-4 font-mono text-neutral-400">TX-7712-A1</td>
+<td class="px-6 py-4 text-white font-bold">Siddharth K.</td>
+<td class="px-6 py-4">
+<div class="flex gap-1">
+<div class="w-1 h-3 bg-[#E4FF6E] rounded-full"></div>
+<div class="w-1 h-3 bg-[#E4FF6E] rounded-full"></div>
+<div class="w-1 h-3 bg-[#E4FF6E] rounded-full"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="flex items-center gap-2 text-red-400 text-xs">
+<span class="w-1.5 h-1.5 bg-red-400 rounded-full"></span> REVOKED
+                        </span>
+</td>
+<td class="px-6 py-4 text-right text-neutral-500 font-mono">11:45:12 GMT</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- Floating Action Button Contextual -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-[#E4FF6E] text-black rounded-full shadow-[0_0_30px_rgba(228,255,110,0.5)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+</body></html>

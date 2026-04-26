@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #34362b;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#1b1b24",
+                      "primary-container": "#d4ef60",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed": "#1e0e4e",
+                      "border-subtle": "rgba(255, 255, 255, 0.1)",
+                      "surface": "#13140b",
+                      "on-primary": "#2b3400",
+                      "background-surface": "#242424",
+                      "data-lavender": "#C4B5FD",
+                      "on-surface-variant": "#c6c8b1",
+                      "surface-container-low": "#1b1c13",
+                      "background": "#13140b",
+                      "on-secondary-fixed-variant": "#4a3d7c",
+                      "secondary-fixed": "#e7deff",
+                      "tertiary-container": "#e3e1ee",
+                      "surface-bright": "#393a2f",
+                      "inverse-primary": "#556500",
+                      "on-primary-container": "#5b6b00",
+                      "inverse-surface": "#e4e3d4",
+                      "error": "#ffb4ab",
+                      "text-primary": "#FFFFFF",
+                      "secondary-fixed-dim": "#ccbeff",
+                      "action-neon": "#E4FF6E",
+                      "on-primary-fixed": "#181e00",
+                      "on-secondary-container": "#baabf3",
+                      "primary-fixed": "#d4ef60",
+                      "surface-container": "#1f2017",
+                      "on-tertiary-fixed-variant": "#464651",
+                      "surface-container-lowest": "#0d0f07",
+                      "on-secondary": "#332664",
+                      "surface-container-highest": "#34362b",
+                      "inverse-on-surface": "#303127",
+                      "on-tertiary-container": "#64636f",
+                      "primary-fixed-dim": "#b8d246",
+                      "tertiary-fixed-dim": "#c7c5d2",
+                      "surface-variant": "#34362b",
+                      "on-background": "#e4e3d4",
+                      "primary": "#ffffff",
+                      "on-tertiary": "#302f3a",
+                      "on-surface": "#e4e3d4",
+                      "tertiary-fixed": "#e3e1ee",
+                      "on-primary-fixed-variant": "#404c00",
+                      "surface-dim": "#13140b",
+                      "surface-tint": "#b8d246",
+                      "outline-variant": "#464837",
+                      "secondary": "#ccbeff",
+                      "background-base": "#121212",
+                      "tertiary": "#ffffff",
+                      "on-error": "#690005",
+                      "surface-container-high": "#292b21",
+                      "secondary-container": "#4a3d7c",
+                      "outline": "#90927d",
+                      "text-muted": "#888888"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "label": ["Inter"],
+                      "body": ["Inter"],
+                      "microcopy": ["Inter"],
+                      "h1": ["Inter"],
+                      "widget-title": ["Inter"]
+              },
+              "fontSize": {
+                      "label": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "body": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                      "microcopy": ["11px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "widget-title": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background-base text-on-background font-body antialiased selection:bg-action-neon selection:text-black">
+<aside class="flex flex-col fixed left-0 top-0 h-full w-64 z-40 px-4 py-8 bg-[#121212]/90 backdrop-blur-xl border-r border-white/10 shadow-[inset_-1px_0_0_0_rgba(255,255,255,0.05)]">
+<div class="mb-12 px-4">
+<h1 class="text-xl font-black text-[#E4FF6E] tracking-tighter uppercase font-h1">NEON NOIR</h1>
+<p class="text-microcopy text-neutral-500 uppercase tracking-widest mt-1">Financial Intel</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span class="font-label">Dashboard</span>
+</a>
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">payments</span>
+<span class="font-label">Expenses</span>
+</a>
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">account_balance_wallet</span>
+<span class="font-label">Budgets</span>
+</a>
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">insights</span>
+<span class="font-label">Analytics</span>
+</a>
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">group</span>
+<span class="font-label">Team</span>
+</a>
+<a class="bg-[#E4FF6E] text-black rounded-full font-bold shadow-[0_0_15px_rgba(228,255,110,0.3)] transition-transform scale-105 flex items-center gap-3 px-4 py-3" href="#">
+<span class="material-symbols-outlined">timeline</span>
+<span class="font-label">Timeline</span>
+</a>
+<a class="text-neutral-500 flex items-center gap-3 px-4 py-3 hover:bg-white/5 hover:text-[#E4FF6E] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">settings</span>
+<span class="font-label">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4 pt-8 border-t border-white/5">
+<button class="w-full py-3 bg-[#E4FF6E] text-black font-bold rounded-full text-sm flex items-center justify-center gap-2 hover:brightness-110 transition-all active:scale-95 shadow-[0_4px_20px_rgba(228,255,110,0.2)]">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Report
+            </button>
+</div>
+</aside>
+<header class="flex justify-between items-center h-16 ml-64 px-8 sticky top-0 z-30 bg-[#121212]/80 backdrop-blur-md border-b border-white/5 shadow-[inset_0_-1px_0_0_rgba(255,255,255,0.05)]">
+<div class="flex items-center gap-4">
+<span class="text-lg font-extrabold text-white font-h1">QUANTUM DASH</span>
+<div class="h-4 w-px bg-white/10 mx-2"></div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500 text-sm group-focus-within:text-[#E4FF6E] transition-colors">search</span>
+<input class="bg-surface-container-lowest border-none rounded-full pl-10 pr-4 py-1.5 text-sm w-64 focus:ring-1 focus:ring-[#E4FF6E]/50 transition-all text-on-surface" placeholder="Global Intel Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors text-neutral-400 hover:text-white">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors text-neutral-400 hover:text-white">
+<span class="material-symbols-outlined">history</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest border border-white/10 flex items-center justify-center overflow-hidden ml-2 cursor-pointer hover:border-[#E4FF6E]/50 transition-colors">
+<span class="material-symbols-outlined text-neutral-400">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<main class="ml-64 p-8 min-h-[calc(100vh-64px)] bg-[#121212]">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="text-h1 font-h1 text-white mb-2">Temporal Intel Feed</h2>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-action-neon/10 border border-action-neon/20 rounded-full text-action-neon font-label">
+<span class="w-1.5 h-1.5 rounded-full bg-action-neon animate-pulse"></span>
+                        Live Execution Sync
+                    </span>
+<p class="text-body text-neutral-400">Syncing with fiscal architecture Alpha-9</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-5 py-2.5 bg-surface-container border border-white/5 rounded-full text-white font-label hover:bg-white/5 transition-all">Export JSON</button>
+<button class="px-5 py-2.5 bg-action-neon text-black font-bold rounded-full text-sm hover:brightness-110 transition-all shadow-[0_0_15px_rgba(228,255,110,0.1)]">Add Event</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-7 space-y-8 relative">
+<div class="absolute left-[31px] top-4 bottom-4 w-px bg-gradient-to-b from-action-neon/50 via-white/10 to-transparent"></div>
+<div class="relative pl-16 group">
+<div class="absolute left-6 top-1.5 w-4 h-4 rounded-full border-2 border-action-neon bg-background-base z-10 shadow-[0_0_10px_rgba(228,255,110,0.5)] group-hover:scale-125 transition-transform"></div>
+<div class="bg-[#242424] border border-white/10 p-6 rounded-lg shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] hover:border-action-neon/30 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-microcopy uppercase tracking-tighter text-action-neon font-black">Upcoming / T-Minus 48h</span>
+<h3 class="text-lg font-bold text-white mt-1">Quarterly Corporate Tax Settlement</h3>
+</div>
+<span class="px-3 py-1 bg-error/10 text-error text-microcopy font-bold border border-error/20 rounded-full uppercase tracking-widest">High Priority</span>
+</div>
+<p class="text-neutral-400 text-body mb-4">Automatic disbursement scheduled for the R&amp;D division. Ensure liquidity across all shadow accounts.</p>
+<div class="flex items-center gap-4 text-microcopy text-neutral-500">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">schedule</span> 09:00 UTC</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">receipt_long</span> REF: TX-9942</span>
+<div class="ml-auto text-action-neon font-bold text-sm">$245,000.00</div>
+</div>
+</div>
+</div>
+<div class="relative pl-16 group">
+<div class="absolute left-6 top-1.5 w-4 h-4 rounded-full border-2 border-neutral-700 bg-background-base z-10 group-hover:border-action-neon/50 transition-colors"></div>
+<div class="bg-[#242424] border border-white/10 p-6 rounded-lg shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-microcopy uppercase tracking-tighter text-neutral-500 font-bold">Scheduled / Oct 28</span>
+<h3 class="text-lg font-bold text-white mt-1">Salary Credits - Executive Tier</h3>
+</div>
+<span class="px-3 py-1 bg-white/5 text-neutral-400 text-microcopy font-bold border border-white/10 rounded-full uppercase tracking-widest">Recurring</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-4">
+<div class="p-3 bg-surface-container-lowest rounded-lg border border-white/5">
+<span class="text-microcopy text-neutral-500 block mb-1">Impact</span>
+<span class="text-body font-bold text-white">42 Accounts</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-lg border border-white/5">
+<span class="text-microcopy text-neutral-500 block mb-1">Status</span>
+<span class="text-body font-bold text-on-secondary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span> Vault Ready
+                                </span>
+</div>
+</div>
+<div class="flex items-center gap-4 text-microcopy text-neutral-500">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">history</span> Last sync 4h ago</span>
+<div class="ml-auto text-white font-bold text-sm">$892,400.00</div>
+</div>
+</div>
+</div>
+<div class="relative pl-16 group">
+<div class="absolute left-6 top-1.5 w-4 h-4 rounded-full border-2 border-action-neon bg-background-base z-10 shadow-[0_0_10px_rgba(228,255,110,0.3)]"></div>
+<div class="bg-gradient-to-br from-action-neon/10 to-transparent border border-action-neon/20 p-6 rounded-lg shadow-[inset_0_1px_1px_rgba(228,255,110,0.05)]">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-microcopy uppercase tracking-tighter text-action-neon font-black">Strategic Milestone / Nov 02</span>
+<h3 class="text-lg font-bold text-white mt-1">Project 'Obsidian' Series B Vesting</h3>
+</div>
+<span class="px-3 py-1 bg-action-neon text-black text-microcopy font-black rounded-full uppercase tracking-widest">Growth Peak</span>
+</div>
+<p class="text-neutral-400 text-body mb-4">Release of restricted asset blocks to secondary market holders. Forecasted liquidity spike of 12% in the lavender sector.</p>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border border-background-base bg-surface-container flex items-center justify-center">
+<img class="w-full h-full object-cover rounded-full" data-alt="close up headshot of a professional man in high tech office lighting dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChnPbZLdHw1Ieagd3l3kqZdoOOO4eLhgiHrr8aOGSeQ_R6ZyHz6Q80pBIkE9m3SpGgjHqyvfKXyU5QGIqEdX3jYjFrEC9AQ8KzNeEya9pXE1T9ZsUaw4YUCK38bY5CCcUqhcxWooY9HWsYS1MlOZ34mf7TpJp-9hlJ5RbcKR3FT9fEdshFm_1G8HuEygg908lqxODn2yTyaUctmg1y50HUEbsr6OJrn8dw-f2W5YW38ElkoEHE-Zz02umpdtHQ9QT0p5-N2PzFwnVx"/>
+</div>
+<div class="w-8 h-8 rounded-full border border-background-base bg-surface-container flex items-center justify-center">
+<img class="w-full h-full object-cover rounded-full" data-alt="professional woman in corporate attire dark atmospheric lighting looking at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2_ae11Psy-AwruU6Ipe0-OatbXyejEtkvqeX3nnLRiBZRvJ1IZyiS8s0s_eC_rmorJsglDV-Cr8F58vusRe6LepXucXaQvlEMC0lfeC5S-Bme9-apd1B0nWQzu2iVSBC1GnAQ8xNE3d-v0wcxQhcKrY4octxIl2zwjmMfADAqhgqzxoCBG683fj3-Qo1XWFD_EQDdKeAlk5apFAAt3B1J_EGGbne_hwaMoVmk2HrtIRr3VE-ammFRNiPKGIpBnVAv_jaw3bElDu2X"/>
+</div>
+<div class="w-8 h-8 rounded-full border border-background-base bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-neutral-400">+12</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-5">
+<div class="sticky top-24">
+<div class="bg-surface-container/60 backdrop-blur-xl border border-white/10 rounded-lg p-8 shadow-2xl">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-widget-title text-white uppercase tracking-[0.2em]">Intel Calendar</h3>
+<div class="flex gap-4">
+<button class="text-neutral-500 hover:text-white"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<span class="text-microcopy font-black text-white uppercase tracking-widest">October 2024</span>
+<button class="text-neutral-500 hover:text-white"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-y-6 text-center">
+<div class="text-microcopy text-neutral-600 font-bold uppercase">Mo</div>
+<div class="text-microcopy text-neutral-600 font-bold uppercase">Tu</div>
+<div class="text-microcopy text-neutral-600 font-bold uppercase">We</div>
+<div class="text-microcopy text-neutral-600 font-bold uppercase">Th</div>
+<div class="text-microcopy text-neutral-600 font-bold uppercase">Fr</div>
+<div class="text-microcopy text-neutral-600 font-bold uppercase">Sa</div>
+<div class="text-microcopy text-neutral-600 font-bold uppercase">Su</div>
+<div class="text-body text-neutral-700 py-2">30</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">1</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">2</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">3</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">4</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">5</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">6</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">7</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">8</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">9</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">10</div>
+<div class="relative text-body text-white font-bold py-2 bg-white/10 rounded-full cursor-pointer transition-colors ring-1 ring-white/20">11</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">12</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">13</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">14</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">15</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">16</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">17</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">18</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">19</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">20</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">21</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">22</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">23</div>
+<div class="relative text-body text-black font-black py-2 bg-action-neon rounded-full cursor-pointer shadow-[0_0_15px_rgba(228,255,110,0.5)]">24</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">25</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">26</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">27</div>
+<div class="relative text-body text-white font-bold py-2 border border-action-neon/50 rounded-full cursor-pointer">
+                                28
+                                <span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-action-neon"></span>
+</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">29</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">30</div>
+<div class="text-body text-neutral-400 py-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors">31</div>
+<div class="text-body text-neutral-700 py-2">1</div>
+<div class="text-body text-neutral-700 py-2">2</div>
+<div class="text-body text-neutral-700 py-2">3</div>
+</div>
+<div class="mt-10 pt-10 border-t border-white/5">
+<div class="flex justify-between items-center mb-6">
+<h4 class="text-microcopy font-bold uppercase text-neutral-500 tracking-widest">Active Watchlist</h4>
+<span class="material-symbols-outlined text-neutral-500 text-sm">settings_ethernet</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-8 bg-action-neon rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-body font-bold text-white">Tax Liquidity Buffer</span>
+<span class="text-microcopy text-action-neon font-black">94%</span>
+</div>
+<div class="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+<div class="w-[94%] h-full bg-action-neon"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-1.5 h-8 bg-data-lavender rounded-full"></div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-body font-bold text-white">Payroll Reserve Flow</span>
+<span class="text-microcopy text-data-lavender font-black">62%</span>
+</div>
+<div class="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+<div class="w-[62%] h-full bg-data-lavender"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 p-6 bg-gradient-to-r from-[#121212] to-surface-container rounded-lg border border-white/5 flex items-center justify-between group cursor-pointer hover:border-white/20 transition-all">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-action-neon text-black rounded-full shadow-[0_0_15px_rgba(228,255,110,0.2)] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">auto_graph</span>
+</div>
+<div>
+<p class="text-body font-bold text-white">Predictive Analysis</p>
+<p class="text-microcopy text-neutral-500">Run T+30 projection models</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-neutral-600 group-hover:text-action-neon transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

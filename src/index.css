@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-[#121212] text-on-surface m-0 p-0 min-h-screen;
+    font-family: 'Inter', sans-serif;
+  }
+  ::selection {
+    background-color: #E4FF6E;
+    color: black;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: rgba(36, 36, 36, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-neon {
+    box-shadow: 0 0 15px rgba(228, 255, 110, 0.2);
+  }
+
+  .inner-glow {
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* Custom scrollbar for webkit */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2.5s ease-in-out infinite;
+}
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* Innovative Utilities */
+  .cyber-border {
+    position: relative;
+  }
+  .cyber-border::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 20px; height: 20px;
+    border-top: 2px solid theme('colors.action-neon');
+    border-left: 2px solid theme('colors.action-neon');
+    pointer-events: none;
+  }
+  .cyber-border::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 20px; height: 20px;
+    border-bottom: 2px solid theme('colors.action-neon');
+    border-right: 2px solid theme('colors.action-neon');
+    pointer-events: none;
+  }
+
+  .scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 5;
+    background: linear-gradient(0deg, rgba(228, 255, 110, 0) 0%, rgba(228, 255, 110, 0.05) 50%, rgba(228, 255, 110, 0) 100%);
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes scanline {
+    0% { bottom: 100%; }
+    100% { bottom: -100px; }
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .text-glow-neon {
+    text-shadow: 0 0 10px rgba(228, 255, 110, 0.5);
+  }
+
+  .text-glow-lavender {
+    text-shadow: 0 0 10px rgba(196, 181, 253, 0.5);
+  }
+
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(228, 255, 110, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(228, 255, 110, 0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .shadow-neon {
+    box-shadow: 0 0 20px rgba(228, 255, 110, 0.15);
+  }
+
+  .drop-shadow-neon {
+    filter: drop-shadow(0 0 5px rgba(228, 255, 110, 0.4));
+  }
+
+  .drop-shadow-orange {
+    filter: drop-shadow(0 0 5px rgba(249, 115, 22, 0.4));
+  }
+
+  /* --- PREMIUM LIGHT MODE OVERRIDES --- */
+  .light-theme {
+    background-color: #f3f4f6 !important;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(196, 181, 253, 0.15) 0px, transparent 50%) !important;
+  }
+  
+  /* Main background resets */
+  .light-theme .bg-\[\#0A0A0A\] { background-color: transparent !important; }
+  .light-theme .bg-\[\#121212\] { background-color: transparent !important; }
+  
+  /* Elevated Surfaces (Cards, Nav, Dropdowns) */
+  .light-theme .bg-\[\#141414\],
+  .light-theme .bg-\[\#1A1A1A\],
+  .light-theme .bg-\[\#242424\] { 
+    background-color: rgba(255, 255, 255, 0.9) !important; 
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+  }
+  
+  /* Sidebar and Headers */
+  .light-theme .bg-\[\#0A0A0A\]\/90 { background-color: rgba(255, 255, 255, 0.85) !important; backdrop-filter: blur(12px); }
+  .light-theme .bg-\[\#0A0A0A\]\/60 { background-color: rgba(255, 255, 255, 0.6) !important; backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+  
+  /* Modals and Overlays */
+  .light-theme .bg-black\/80 { background-color: rgba(255, 255, 255, 0.8) !important; backdrop-filter: blur(8px); }
+  .light-theme .bg-black\/50, .light-theme .bg-black\/40 { background-color: rgba(0, 0, 0, 0.04) !important; }
+  
+  /* Typography */
+  .light-theme .text-white { color: #111827 !important; font-weight: 500 !important; }
+  .light-theme .text-on-surface { color: #374151 !important; }
+  .light-theme .text-neutral-500 { color: #6b7280 !important; }
+  .light-theme .text-text-muted { color: #9ca3af !important; }
+  .light-theme .hover\:text-white:hover { color: #4F46E5 !important; }
+  
+  /* Borders (subtle structure) */
+  .light-theme .border-white\/5 { border-color: rgba(0, 0, 0, 0.04) !important; }
+  .light-theme .border-white\/10 { border-color: rgba(0, 0, 0, 0.08) !important; }
+  .light-theme .border-white\/30 { border-color: rgba(0, 0, 0, 0.15) !important; }
+  
+  /* Soft Hover States */
+  .light-theme .bg-white\/\[0\.03\], .light-theme .bg-white\/\[0\.02\], .light-theme .bg-white\/\[0\.01\] { background-color: rgba(0, 0, 0, 0.02) !important; }
+  .light-theme .bg-white\/5, .light-theme .bg-white\/\[0\.06\] { background-color: rgba(0, 0, 0, 0.04) !important; }
+  .light-theme .bg-white\/10 { background-color: rgba(0, 0, 0, 0.08) !important; }
+  
+  /* Change Neon Accent to Electric Indigo for visibility in Light Mode */
+  .light-theme .text-action-neon { color: #4F46E5 !important; }
+  .light-theme .bg-action-neon { background-color: #4F46E5 !important; color: white !important; }
+  .light-theme .border-action-neon { border-color: #4F46E5 !important; }
+  .light-theme .selection\:bg-action-neon::selection { background-color: #4F46E5 !important; color: white !important; }
+  
+  /* Recharts overrides */
+  .light-theme [stroke="#E4FF6E"] { stroke: #4F46E5 !important; }
+  .light-theme [fill="#E4FF6E"] { fill: #4F46E5 !important; }
+  .light-theme [stop-color="#E4FF6E"] { stop-color: #4F46E5 !important; }
+  
+  /* Glows & Grids */
+  .light-theme .inner-glow { box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.8) !important; }
+  .light-theme .glow-neon { box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2) !important; }
+  .light-theme .drop-shadow-neon { filter: drop-shadow(0 0 5px rgba(79, 70, 229, 0.3)) !important; }
+  
+  .light-theme .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px) !important;
+  }
+}
+
